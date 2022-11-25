@@ -1,6 +1,6 @@
 import React from "react"
 
-export default function Letra({letra, cliqueLetra}){
+export default function Letra({letra, cliqueLetra, botoes_desabilitados}){
     const [desabilitado, setDesabilitado] = React.useState(false)
     function cliqueLetraCompleto(letra){
         cliqueLetra(letra)
@@ -8,9 +8,9 @@ export default function Letra({letra, cliqueLetra}){
     }
 
     return(
-        <button className="letra botao" 
+        <button className={`letra ${botoes_desabilitados || desabilitado ? 'botao-off':'botao'}`} 
         onClick={()=>cliqueLetraCompleto(letra)} 
-        disabled={desabilitado ? true : false}>
+        disabled={botoes_desabilitados || desabilitado ? true : false}>
             <p>{letra.toUpperCase()}</p>
         </button>
     )
