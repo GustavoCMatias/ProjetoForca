@@ -104,13 +104,12 @@
 .letra {
   height: 40px;
   width: 40px;
-
+  vertical-align: middle;
 
 
   margin-bottom: 12px;
   margin-right: 12px;
 
-  padding-top: 12px;
 
 }
 
