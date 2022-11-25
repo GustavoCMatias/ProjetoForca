@@ -1,8 +1,8 @@
-export default function Jogo({letras_palavra, str_tela}) {
+export default function Jogo({letras_palavra, str_tela, forca}) {
     
     return (
         <div className="jogo">
-            <img src="./assets/forca0.png" className='imagem' />
+            <img src={forca} className='imagem' />
 
             <div>
                 <button className="escolha">Escolher palavra</button>

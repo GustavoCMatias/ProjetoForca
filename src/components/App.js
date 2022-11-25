@@ -8,16 +8,37 @@ import React from "react"
 const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", 
 "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
 
-function App(props) {
-  const palavra = props.palavra[Math.floor(Math.random() * props.palavra.length)]
-  const letras_palavra = [...palavra]
+const letras_clicadas = []
+let erros = 0
+
+function App({letras_palavra}) {
+
+  function cliqueLetra(letra){
+    if(letras_palavra.includes(letra)){
+      letras_clicadas.push(letra)
+      let new_string = ''
+      for(let i=0; i<letras_palavra.length; i++){
+        console.log(letras_palavra)
+        if(letras_clicadas.includes(letras_palavra[i])){
+          new_string+=`${letras_palavra[i]} `
+        }else{
+          new_string+=`_ `
+        }
+      }
+      setStr_tela(new_string)
+    }else{
+      erros+=1
+      setForca(`./assets/forca${erros}.png`)
+    }
+  }
+  
   const [str_tela, setStr_tela] = React.useState('_ '.repeat(letras_palavra.length))
-  console.log(palavra, str_tela, letras_palavra.length)
+  const [forca, setForca] = React.useState("./assets/forca0.png")
   return (
     <>
-    <Jogo letras_palavra={letras_palavra} str_tela={str_tela}/>
+    <Jogo letras_palavra={letras_palavra} str_tela={str_tela} forca={forca}/>
     <div className="letras">
-      {alfabeto.map(i => <Letra letra={i} key={i} />)}
+      {alfabeto.map(i => <Letra letra={i} key={i} cliqueLetra={cliqueLetra}/>)}
     </div>
     <Chute/>
 

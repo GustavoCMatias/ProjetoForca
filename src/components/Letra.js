@@ -1,7 +1,7 @@
-export default function Letra(props){
+export default function Letra({letra, cliqueLetra}){
     return(
-        <button className="letra botao" onClick={()=>console.log(props.letra)}>
-            <p>{props.letra.toUpperCase()}</p>
+        <button className="letra botao" onClick={()=>cliqueLetra(letra)}>
+            <p>{letra.toUpperCase()}</p>
         </button>
     )
 }
