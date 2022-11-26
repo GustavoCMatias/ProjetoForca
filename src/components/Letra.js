@@ -14,7 +14,8 @@ export default function Letra({letra, cliqueLetra, botoes_desabilitados, letras_
     return(
         <button className={`letra ${botoes_desabilitados || desabilitado ? 'botao-off':'botao'}`} 
         onClick={()=>cliqueLetraCompleto(letra)} 
-        disabled={botoes_desabilitados || desabilitado ? true : false}>
+        disabled={botoes_desabilitados || desabilitado ? true : false}
+        data-test="letter">
             <p>{letra.toUpperCase()}</p>
         </button>
     )

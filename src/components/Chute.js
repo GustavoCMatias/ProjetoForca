@@ -20,11 +20,13 @@ export default function Chute({ palpite, setPalpite, botoes_desabilitados, palav
 
             <input className="caixa-input"
                 onChange={(e) => setPalpite(e.target.value)}
-                value={palpite} />
+                value={palpite} 
+                data-test="guess-button"/>
 
             <button className={`botao enter ${botoes_desabilitados ? 'botao-off' : 'botao'}`}
                 onClick={envioPalpite}
-                disabled={botoes_desabilitados? true : false}>
+                disabled={botoes_desabilitados? true : false}
+                data-test="guess-input">
                 <p>Chutar</p>
             </button>
         </div>
