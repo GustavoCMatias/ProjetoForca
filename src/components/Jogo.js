@@ -4,7 +4,7 @@ export default function Jogo({letras_palavra, str_tela, forca, setBotoes_desabil
     }
     return (
         <div className="jogo">
-            <img src={forca} className='imagem' />
+            <img src={forca} className='imagem' alt=''/>
 
             <div>
                 <button className="escolha" onClick={cliqueEscolherPalavra}>Escolher palavra</button>
