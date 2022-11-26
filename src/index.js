@@ -9,7 +9,7 @@ const palavra = palavras[Math.floor(Math.random() * palavras.length)]
 const letras_palavra = [...palavra]
 root.render(
   <React.StrictMode>
-  <App letras_palavra={letras_palavra}/>
+  <App palavra={palavra} letras_palavra={letras_palavra}/>
   </React.StrictMode>
 );
 

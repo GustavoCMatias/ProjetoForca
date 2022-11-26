@@ -35,10 +35,16 @@
   border: 1px solid #7AA7C7;
 }
 
+.correto {
+  color: #27AE60;
+}
+.errado {
+  color: #ff0000;
+}
+
 .enter {
   width: 100px;
   height: 40px;
-  padding-top: 9px;
 }
 
 .escolha {
@@ -109,7 +115,7 @@
   font-size: 50px;
   font-weight: 700;
   line-height: 68px;
-  letter-spacing: 0em;
+  letter-spacing: 15px;
   text-align: center;
 
   margin-top: 280px;

@@ -1,4 +1,4 @@
-export default function Jogo({letras_palavra, str_tela, forca, setBotoes_desabilitados}) {
+export default function Jogo({letras_palavra, str_tela, forca, setBotoes_desabilitados, finalizado}) {
     
     return (
         <div className="jogo">
@@ -7,7 +7,7 @@ export default function Jogo({letras_palavra, str_tela, forca, setBotoes_desabil
             <div>
                 <button className="escolha" onClick={()=>setBotoes_desabilitados(false)}>Escolher palavra</button>
 
-                <p>{str_tela}</p>
+                <p className={`${finalizado===1?'correto':''} ${finalizado===-1?'errado':''}`}>{str_tela}</p>
 
             </div>
 
