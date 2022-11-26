@@ -1,10 +1,14 @@
 import React from "react"
+let desabilitado = false;
 
-export default function Letra({letra, cliqueLetra, botoes_desabilitados}){
-    const [desabilitado, setDesabilitado] = React.useState(false)
+export default function Letra({letra, cliqueLetra, botoes_desabilitados, letras_clicadas}){
+    if (letras_clicadas.includes(letra)){
+        desabilitado = true
+    }else{
+        desabilitado = false
+    }
     function cliqueLetraCompleto(letra){
         cliqueLetra(letra)
-        setDesabilitado(true)
     }
 
     return(

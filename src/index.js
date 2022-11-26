@@ -5,11 +5,9 @@ import {palavras} from "./palavras.js";
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const palavra = palavras[Math.floor(Math.random() * palavras.length)]
-const letras_palavra = [...palavra]
 root.render(
   <React.StrictMode>
-  <App palavra={palavra} letras_palavra={letras_palavra}/>
+  <App palavras={palavras}/>
   </React.StrictMode>
 );
 

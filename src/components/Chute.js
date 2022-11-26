@@ -1,7 +1,6 @@
 import React from "react"
 
 export default function Chute({ palpite, setPalpite, botoes_desabilitados, palavra, setFinalizado, setBotoes_desabilitados, cliqueTodas, setForca }) {
-    const [desabilitado, setDesabilitado] = React.useState(false)
     function envioPalpite() {
         if(palpite===palavra){
             setFinalizado(1)
@@ -23,9 +22,9 @@ export default function Chute({ palpite, setPalpite, botoes_desabilitados, palav
                 onChange={(e) => setPalpite(e.target.value)}
                 value={palpite} />
 
-            <button className={`botao enter ${botoes_desabilitados || desabilitado ? 'botao-off' : 'botao'}`}
+            <button className={`botao enter ${botoes_desabilitados ? 'botao-off' : 'botao'}`}
                 onClick={envioPalpite}
-                disabled={botoes_desabilitados || desabilitado ? true : false}>
+                disabled={botoes_desabilitados? true : false}>
                 <p>Chutar</p>
             </button>
         </div>
